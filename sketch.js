@@ -1,5 +1,5 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
-var packageBody,ground
+var packageBody,ground, a
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -10,6 +10,7 @@ function preload()
 	packageIMG=loadImage("package.png")
 }
 function setup() {
+	a = 0
 	createCanvas(800, 700);
 	rectMode(CENTER);
 	packageSprite=createSprite(width/2, 80, 10,10);
@@ -46,9 +47,11 @@ function setup() {
 function draw() {
   if (keyCode === LEFT_ARROW){
 	  helicopterSprite.x = helicopterSprite.x-20
+	  a = 1
 }
   if (keyCode === RIGHT_ARROW){
 	helicopterSprite.x = helicopterSprite.x+20
+	  a = 1
 }
 if (keyCode === LEFT_ARROW && packageSprite.y === 200){
 	Matter.Body.translate(packageBody, {x:-20,y:0})
@@ -56,7 +59,7 @@ if (keyCode === LEFT_ARROW && packageSprite.y === 200){
 if (keyCode === RIGHT_ARROW && packageSprite.y === 200){
   Matter.Body.translate(packageBody, {x:+20,y:0})
 }
-if (keyDown(DOWN_ARROW) && (packageSprite.velocityX < 0 || packageSprite.velocityX > 0)){
+if (keyDown(DOWN_ARROW) && a === 1){
   Matter.Body.setStatic(packageBody,false)
 }
 if (packageBody.velocityY>0){
