@@ -56,15 +56,15 @@ if (keyCode === LEFT_ARROW && packageSprite.y === 200){
 if (keyCode === RIGHT_ARROW && packageSprite.y === 200){
   Matter.Body.translate(packageBody, {x:+20,y:0})
 }
-  if (keyDown(DOWN_ARROW)){
-	Matter.Body.setStatic(packageBody,false)
+if (keyDown(DOWN_ARROW)){
+  Matter.Body.setStatic(packageBody,false)
 }
-  if (packageBody.VelocityY>0){
-	  packageBody.velocityX = 0
-  }
-  rectMode(CENTER);
-  background(0);
-  packageSprite.x= packageBody.position.x 
-  packageSprite.y= packageBody.position.y 
-  drawSprites();
+if (packageBody.VelocityY>0){
+   packageBody.velocityX = 0
+}
+ rectMode(CENTER);
+ background(0);
+ packageSprite.x= packageBody.position.x 
+ packageSprite.y= packageBody.position.y 
+ drawSprites();
 }
