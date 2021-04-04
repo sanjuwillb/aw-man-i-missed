@@ -44,16 +44,16 @@ function setup() {
 	Engine.run(engine); 
 }
 function draw() {
-  if (keyDown(LEFT_ARROW)){
+  if (keyCode === LEFT_ARROW){
 	  helicopterSprite.x = helicopterSprite.x-20
 }
-  if (keyDown(RIGHT_ARROW)){
+  if (keyCode === RIGHT_ARROW){
 	helicopterSprite.x = helicopterSprite.x+20
 }
-if (keyDown(LEFT_ARROW) && packageSprite.y === 200){
+if (keyCode === LEFT_ARROW && packageSprite.y === 200){
 	Matter.Body.translate(packageBody, {x:-20,y:0})
 }
-if (keyDown(RIGHT_ARROW) && packageSprite.y === 200){
+if (keyCode === RIGHT_ARROW && packageSprite.y === 200){
   Matter.Body.translate(packageBody, {x:+20,y:0})
 }
   if (keyDown(DOWN_ARROW)){
