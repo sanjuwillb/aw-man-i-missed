@@ -12,10 +12,10 @@ function preload()
 function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
-	packageSprite=createSprite(200, 80, 10,10);
+	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
-	helicopterSprite=createSprite(200, 200, 10,10);
+	helicopterSprite=createSprite(width/2, 200, 10,10);
 	helicopterSprite.addImage(helicopterIMG)
 	helicopterSprite.scale=0.6
 	groundSprite=createSprite(width/2, height-35, width,10);
@@ -56,7 +56,7 @@ if (keyCode === LEFT_ARROW && packageSprite.y === 200){
 if (keyCode === RIGHT_ARROW && packageSprite.y === 200){
   Matter.Body.translate(packageBody, {x:+20,y:0})
 }
-  if (keyDown(DOWN_ARROW)){
+  if (keyDown(DOWN_ARROW) && (packageSprite.velocityX > 0 || packageSprite.velocityX < 0){
 	Matter.Body.setStatic(packageBody,false)
 }
   if (packageBody.VelocityY>0){
