@@ -56,7 +56,7 @@ if (keyCode === LEFT_ARROW && packageSprite.y === 200){
 if (keyCode === RIGHT_ARROW && packageSprite.y === 200){
   Matter.Body.translate(packageBody, {x:+20,y:0})
 }
-if (keyDown(DOWN_ARROW) && (packageSprite.x < 400 || packageSprite.x > 400)){
+if (keyDown(DOWN_ARROW) && (packageSprite.velocityX < 0 || packageSprite.velocityX > 0)){
   Matter.Body.setStatic(packageBody,false)
 }
 if (packageBody.velocityY>0){
