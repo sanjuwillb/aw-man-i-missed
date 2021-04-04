@@ -12,10 +12,10 @@ function preload()
 function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
-	packageSprite=createSprite(width/4, 80, 10,10);
+	packageSprite=createSprite(200, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
-	helicopterSprite=createSprite(width/4, 200, 10,10);
+	helicopterSprite=createSprite(200, 200, 10,10);
 	helicopterSprite.addImage(helicopterIMG)
 	helicopterSprite.scale=0.6
 	groundSprite=createSprite(width/2, height-35, width,10);
